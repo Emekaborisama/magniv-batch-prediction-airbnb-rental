@@ -56,7 +56,7 @@ def get_data():
 
 
 @task(key="second",schedule="@monthly",resources={"cpu": "2000m", "memory": "2Gi"},description=" preprocess data and run price prediction inference")
-def merge_result_geo(pred):
+def merge_result_geo():
     data = download_s3()
     pred = inference(model=model, data=data)
     data['predicted_prices'] = pred
