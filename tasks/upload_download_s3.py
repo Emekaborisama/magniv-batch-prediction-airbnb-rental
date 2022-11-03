@@ -1,6 +1,4 @@
-from turtle import down
 import pandas as pd
-from app import get_data
 import os
 s3_url = "s3://mangivprojectdata/data_file/data.csv"
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")

@@ -8,20 +8,20 @@ import resource
 import requests
 import pandas as pd
 from magniv.core import task
-from pyspark.sql import SparkSession
-import pyspark.pandas as ps
+# from pyspark.sql import SparkSession
+# import pyspark.pandas as ps
 import pickle
-import pyspark.pandas as ps
-from pyspark.context import SparkContext
-sc = SparkContext.getOrCreate()
-spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
+# import pyspark.pandas as ps
+# from pyspark.context import SparkContext
+# sc = SparkContext.getOrCreate()
+# spark = SparkSession.builder.appName("SparkByExamples.com").getOrCreate()
 #read pickled model via pipeline api
 from upload_download_s3 import download_s3, upload_s3
 serialized_model = open("tasks/model/model_lin.p", "rb")
 model = pickle.load(serialized_model)
 url = "https://public.opendatasoft.com/api/records/1.0/search/?q=new+york&facet=host_response_time&facet=host_response_rate&facet=host_verifications&facet=city&facet=country&facet=property_type&facet=room_type&facet=bed_type&facet=amenities&facet=availability_365&facet=cancellation_policy&facet=features&facet=geolocation&facet=last_review_month&facet=minimum_nights&facet=reviews_per_month&facet=host_total_listings_count"
 
-model_bd = sc.broadcast(model)
+# model_bd = sc.broadcast(model)
 
 
 
@@ -36,7 +36,7 @@ def inference(data,model):
     data= data.drop(['fields.last_review','fields.latitude', 'fields.longitude'],axis=1)
     data['fields.room_type'] = data['fields.room_type'].replace({"Entire home/apt":0,"Private room":1,
                                                    "Shared room":2,"Hotel room":3})
-    return model.value.predict(data.values)
+    return model.predict(data.values)
    
 
 

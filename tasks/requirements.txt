@@ -1,6 +1,5 @@
-pyspark[sql]
-
-pyspark[pandas_on_spark] 
+# pyspark[sql]
+# pyspark[pandas_on_spark] 
 s3fs
 pandas
 awscli
