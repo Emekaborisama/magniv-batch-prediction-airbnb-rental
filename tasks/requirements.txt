@@ -3,3 +3,4 @@ s3fs
 pandas
 awscli
 magniv
+PyArrow
