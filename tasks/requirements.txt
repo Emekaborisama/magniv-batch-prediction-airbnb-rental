@@ -1,0 +1,5 @@
+pyspark
+s3fs
+pandas
+awscli
+magniv
