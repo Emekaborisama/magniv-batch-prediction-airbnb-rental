@@ -1,7 +1,6 @@
-# pyspark[sql]
-# pyspark[pandas_on_spark] 
+
 s3fs
 pandas
 awscli
 magniv
-PyArrow
+
