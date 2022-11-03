@@ -16,7 +16,7 @@ def upload_s3(data):
     
 def download_s3():
     """download data from s3"""
-    download_data = pd.read_csv(s3_url, index=False, storage_options={
+    download_data = pd.read_csv(s3_url, storage_options={
         "key": AWS_ACCESS_KEY_ID,
         "secret": AWS_SECRET_ACCESS_KEY
     })
