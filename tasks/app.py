@@ -2,7 +2,7 @@
 # Import PySpark Pandas
 
 
-from distutils.command.upload import upload
+
 import os
 import resource
 import requests
