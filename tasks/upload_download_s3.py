@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-s3_url = "s3://mangivprojectdata/data_file/data.csv"
+s3_url =os.getenv("S3_URL")
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 
