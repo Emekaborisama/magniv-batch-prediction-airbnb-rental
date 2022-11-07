@@ -19,8 +19,7 @@ import pickle
 from upload_download_s3 import download_s3, upload_s3
 serialized_model = open("tasks/model/model_lin.p", "rb")
 model = pickle.load(serialized_model)
-url = "https://public.opendatasoft.com/api/records/1.0/search/?q=new+york&facet=host_response_time&facet=host_response_rate&facet=host_verifications&facet=city&facet=country&facet=property_type&facet=room_type&facet=bed_type&facet=amenities&facet=availability_365&facet=cancellation_policy&facet=features&facet=geolocation&facet=last_review_month&facet=minimum_nights&facet=reviews_per_month&facet=host_total_listings_count"
-
+url = os.getenv("DATA_URL")
 # model_bd = sc.broadcast(model)
 
 
